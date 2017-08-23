@@ -40,7 +40,7 @@ function CreateOrderlists(){
         tSTO[j]=TA+OrderLists[j].tb+OrderLists[j].tc+OrderLists[j].td+OrderLists[j].te;
         EffiSTO[j]=(OrderLists[j].sum)/tSTO[j];//仓储模式效率
         EffiSigl[j]=(OrderLists[j].sum)/8;//单人模式效率
-        console.log(`完成本订单使用仓储的效率为${EffiSTO[j]},而使用单人模式的效率为${EffiSigl[j]}`);
+        console.log(`完成第${j}笔订单使用仓储的效率为${EffiSTO[j]},而使用单人模式的效率为${EffiSigl[j]}`);
     }
 }
 CreateOrderlists();

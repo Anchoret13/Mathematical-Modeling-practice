@@ -9,6 +9,10 @@ private:
     int dailys;
     int es;
     int souvs;
+    int sum = Foods+drinks+dailys+es+souvs;
+    bool condition;
+
+    int t1,t2,t3,t4,t5;//五个阶段的时间
 public:
     Orders(foods,drinks,dailys,es,souvs){
         this foods = foods;
@@ -35,11 +39,12 @@ public:
 int main(){
     
 }
-
+//所谓串行单人模式
 int DANRENMOSHI(){
     int *OrderLists;
     int OrderNum;
     for(i=0;i<OrderNum;i++){
-        OrderLists[i] = new Orders;
+        OrderLists[i] = new Orders;//在考虑是不是要存个指针指向实例化的对象
+        OrderLists[i].
     }
 }

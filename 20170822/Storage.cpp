@@ -35,7 +35,7 @@ int main(){
         OrderLists[j].ta=max(OrderLists[j].ta,OrderLists[j-1].tb);
         OrderLists[j].tb=max(OrderLists[j].tb,OrderLists[j-1].tc-OrderLists[j].ta+OrderLists[j-1].tb);
         OrderLists[j].tc=max(OrderLists[j].tc,OrderLists[j-1].td-OrderLists[j].ta-OrderLists[j].tb+OrderLists[j-1].tb);
-        OrderLists[j].td=max(OrderLists[j].td,OrderLists[j-1].tb=OrderLists[j-1].tc+OrderLists[j-1].td-OrderLists[j].ta-OrderLists[j].tb-OrderLists[j].tc);
+        OrderLists[j].td=max(OrderLists[j].td,OrderLists[j-1].tb-OrderLists[j-1].tc+OrderLists[j-1].td-OrderLists[j].ta-OrderLists[j].tb-OrderLists[j].tc);
         OrderLists[j].te=OrderLists[j].te;
         TA+=OrderLists[j].ta;
         t[j]=TA+OrderLists[j].tb+OrderLists[j].tc+OrderLists[j].td+OrderLists[j].te;

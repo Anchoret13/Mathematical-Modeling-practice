@@ -4,11 +4,11 @@ function Orders(){
     this.numC = Math.floor(Math.random()*100+1);
     this.numD = Math.floor(Math.random()*100+1);
     this.numE = Math.floor(Math.random()*100+1);
-    this.ta=0;
-    this.tb=0;
-    this.tc=0;
-    this.td=0;
-    this.te=0;
+    this.ta=this.numA/24;
+    this.tb=this.numB/24;
+    this.tc=this.numC/24;
+    this.td=this.numD/24;
+    this.te=this.numE/24;
     this.sum = this.numA+this.numB+this.numC+this.numD+this.numE;
     this.T=(this.numA+this.numB+this.numC+this.numD+this.numE)
 
@@ -23,11 +23,6 @@ function CreateOrderlists(){
     var EffiSTO=new Array();
     var EffiSigl=new Array();
     OrderLists[0] = new Orders();
-    OrderLists[0].ta=OrderLists[0].numA/24;
-    OrderLists[0].tb=OrderLists[0].numB/24;
-    OrderLists[0].tc=OrderLists[0].numC/24;
-    OrderLists[0].td=OrderLists[0].numD/24;
-    OrderLists[0].te=OrderLists[0].numE/24;
 
     for(let j=1;j<orderNum;j++){
         OrderLists[j] = new Orders();

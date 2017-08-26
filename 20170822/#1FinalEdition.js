@@ -43,7 +43,7 @@ function CreateOrderlists(){
         EFFTSTO+=EffiSTO[j];
         EffiSigl[j]=(OrderLists[j].sum)/8;//单人模式效率
         EFFTSIGL+=OrderLists[j].sum;
-        console.log(`${EffiSTO[j]} ${EffiSigl[j]}`);
+        //console.log(`${EffiSTO[j]} ${EffiSigl[j]}`);
     }
     var EFFAVGSTO=EFFTSTO/orderNum;
     var EFFAVGSigl=EFFTSIGL/(8*orderNum);

@@ -1,19 +1,19 @@
 DEF=10;
-A=rand(DEF,DEF);%产生DEF*DEF的随机矩阵 
-for i=1:DEF 
+A=rand(10,10);%产生DEF*DEF的随机矩阵 
+for i=1:10 
      A(i,i)=0%将对角线上的数置为0 
 end 
      A=10*A; 
      A=floor(A);%向下去整 
-       for i=1:DEF 
+       for i=1:10 
          for j=1:i 
              A(j,i)=A(i,j)%将A矩阵变为一个上三角或者下三角矩阵 
          end 
        end 
-       x=100*rand(1,DEF);y=100*rand(1,DEF);%产生10个随机的点 
+       %x=100*rand(1,DEF);y=100*rand(1,DEF);%产生10个随机的点 
      plot(x,y,'r+'); 
      
-        for i=1:DEF 
+        for i=1:10 
     a=find(A(i,:)>0)%将A矩阵每行大于0的数的在该行的地址找出来放在a中 
     
     

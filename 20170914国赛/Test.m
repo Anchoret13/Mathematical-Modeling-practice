@@ -1,27 +1,28 @@
 syms i j k imax jmax kmax XJ DJ DJJ DD
-syms d
+%syms d
 syms S
 syms beta lamda
 lamda=1;
-imax=800;
-jmax=350;
+imax=1800;
+jmax=835;
 kmax=3;
 
 
-syms l %组号
+syms l 
 syms A B
-A(1)=68.384;
-A(2)=65.241;
-A(3)=65.840;
+A(1)=66.3154;
+A(2)=65.21;
+A(3)=65.9585;
 
 syms W
-syms d
 
-for i=2:1:835
-    for j=2:1:355
-        d(i,j)=distance(LocateUsr1(j,2),LocateUsr1(j,3),LocateTask(i,2),LocateTask(i,3));
-    end
-end
+
+
+%for i=2:1:835
+%    for j=2:1:355
+%        d(i,j)=distance(LocateUsr1(j,2),LocateUsr1(j,3),LocateTask(i,2),LocateTask(i,3));
+%    end
+%end
 
 %S(2,j)=W(i,j) Done 
 %S(3,j)=d(i,j) Done 
@@ -52,17 +53,24 @@ for i=1:1:imax
     end
 end
 
-
+for i=1:1:imax
+    for j=1:1:jmax
+        W(i,j)=A(1)+B(i,j)*d(i,j);
+    end
+end
 beta(1)=1;
 beta(2)=1;
 beta(3)=1;
-
-if d(i,j)<0.0499
-    B(i,j)=20;
-elseif (0.05<d(i,j)<0.1)
-    B(i,j)=25;
-elseif (d(i,j)>0.1)
-    B(i,j)=30;
+for i=1:1:imax
+    for j=1:1:jmax
+        if d(i,j)<0.029
+            B(i,j)=20;
+        elseif (0.03<d(i,j)<0.059)
+            B(i,j)=25;
+        elseif (0.06<d(i,j)<0.09)
+            B(i,j)=30;
+        end
+    end
 end
 
 
@@ -85,12 +93,13 @@ for i=1:1:imax
 end
 yita = PQIUHE/DQIUHE;
 
+
+syms TruePMAX
+TruePMAX=PMAX(1);
 for i=1:1:imax
-    for j=1:1:jmax
-        W(i,j)=A(1)+B(i,j)*d(i,j);
+    if TruePMAX<PMAX(i)
+        TriePMAX=PMAX(i);
     end
 end
 
-
-syms radium 
-
+disp(PMAX);

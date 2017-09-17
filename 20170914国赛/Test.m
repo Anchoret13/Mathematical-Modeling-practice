@@ -30,9 +30,6 @@ for j=1:1:355
     S(4,j)=LocateUsr1(j,6);
 end
 
-%for j=1:1:355
-%    S(1,j)=60*LocateUsr1(j,4)+S(j,5);
-%end
 DD=0;
 %for i=2:1:800
 %    for j=2:1:300
@@ -92,7 +89,7 @@ DQIUHE=0;
 %    end
 %end
 %yita = PQIUHE/DQIUHE;
-
+FDMIN=67.34;
 
 syms TruePMAX
 TruePMAX=PMAX(1);
@@ -102,8 +99,7 @@ for i=1:1:imax
     end
 end
 
-disp(PMAX);
-
+disp(FDMIN)
 syms TrueDMIN
 TrueDMIN=DLIE(1);
 for i=1:1:imax
